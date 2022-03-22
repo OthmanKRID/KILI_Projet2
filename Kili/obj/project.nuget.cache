@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p+46v5DaClW+YLkcmycbhb/i5xpmlam7jtvUeUxRS5extRB0PRgEWoGNmqyK70m5RQRjvjWfpVaAttXmmmPu/A==",
+  "dgSpecHash": "e1ihh7S8qN7s6BPQVIGQOLpyAmwmWDm/ynEY1gVYAAb5kWkhHPf3AjoYU8SBZBvi6Fo+hU2g1lFq6nFSgfXAsg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bruno\\Desktop\\Formation ISIKA\\Projet 2\\Kili\\Kili\\Kili.csproj",
+  "projectFilePath": "C:\\Users\\Bruno\\Repository projet 2\\KILI_Projet2\\Kili\\Kili.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bruno\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Bruno\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
