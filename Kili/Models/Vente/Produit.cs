@@ -20,13 +20,13 @@ namespace Kili.Models.Vente
         public string ImagePath { get; set; }
 
         [Display(Name = "Prix")]
-        public double? PrixUnitaire { get; set; }
+        public double PrixUnitaire { get; set; }
 
         [Required]
         [Display(Name = "Devise")]
         public string Devise { get; set; }
 
-        public int? CatalogueID { get; set; }
+        public int CatalogueID { get; set; }
 
         public virtual Catalogue Catalogue { get; set; }
     }

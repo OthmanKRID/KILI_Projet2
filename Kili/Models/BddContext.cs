@@ -90,6 +90,13 @@ namespace Kili.Models
             modelBuilder.Entity<Abonnement>()
                 .HasIndex(p => p.AssociationId)
                 .IsUnique();
+
+            modelBuilder.Entity<Produit>()
+                .HasIndex(p => p.ProduitID)
+                .IsUnique();
+            modelBuilder.Entity<Catalogue>()
+                .HasIndex(p => p.CatalogueID)
+                .IsUnique();
         }
 
         public void DeleteCreateDatabase()

@@ -254,3 +254,8 @@ C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Kili.RazorTargetAs
 C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Kili.Views.pdb
 C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Kili.csproj.CopyComplete
 C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Kili.genruntimeconfig.cache
+C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Razor\Views\Cata\Index.cshtml.g.cs
+C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Razor\Views\Cata\CreerCatalogue.cshtml.g.cs
+C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Razor\Views\Cata\ModifierCatalogue.cshtml.g.cs
+C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Razor\Views\Product\CreerProduit.cshtml.g.cs
+C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
