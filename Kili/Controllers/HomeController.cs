@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Kili.Models.General;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Kili.Controllers
 {
@@ -6,6 +8,9 @@ namespace Kili.Controllers
     {
         public IActionResult Index()
         {
+            var Role = User.FindFirst(ClaimTypes.Role);
+
+            bool isAdmin = User.IsInRole(TypeRole.Admin.ToString());
             return View();
         }
     }

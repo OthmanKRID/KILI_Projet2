@@ -18,9 +18,14 @@ namespace Kili.Models
             this.Database.EnsureDeleted();
             this.Database.EnsureCreated();
             UserAccount_Services userAccountServices = new UserAccount_Services();
-            userAccountServices.CreerUserAccount("Fara", "P@ssFara1", "Fara@gmail.com");
-            userAccountServices.CreerUserAccount("Romy", "P@ssRomy1", "Romy@gmail.com");
-            userAccountServices.CreerUserAccount("Othman", "P@ssOthman1", "Othman@gmail.com");
+
+            userAccountServices.CreerAdmin("Admin", "Admin", "Kili@mail.com");
+            userAccountServices.CreerUserAccount("Fara", "P@ssFara1", "Fara@gmail.com", TypeRole.Utilisateur);
+            userAccountServices.CreerUserAccount("Romy", "P@ssRomy1", "Romy@gmail.com", TypeRole.Utilisateur);
+            userAccountServices.CreerUserAccount("Othman", "P@ssOthman1", "Othman@gmail.com", TypeRole.Utilisateur);
+
+
+            userAccountServices.DésactiverUserAccount(1);
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

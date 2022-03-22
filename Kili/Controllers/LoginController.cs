@@ -41,6 +41,7 @@ namespace Kili.Controllers
                     var userClaims = new List<Claim>()
                     {
                         new Claim(ClaimTypes.Name, utilisateur.Id.ToString()),
+                        new Claim(ClaimTypes.Role, utilisateur.Role.ToString()),
                     };
 
                     var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");

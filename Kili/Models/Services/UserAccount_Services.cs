@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using static Kili.Models.General.UserAccount;
 
 namespace Kili.Models
 {
@@ -47,15 +48,21 @@ namespace Kili.Models
         }
 
         //Fonction permettant de créer un UserAccount
-        public int CreerUserAccount(string username, string password, string email)
+        public int CreerUserAccount(string username, string password, string email, TypeRole role)
         {
-            UserAccount userAccount = new UserAccount() { UserName = username, Password = password, Mail = email, DateCreation = System.DateTime.Today, Actif = true };
+            UserAccount userAccount = new UserAccount() { UserName = username, Password = password, Mail = email, DateCreation = System.DateTime.Today, Actif = true, Role = role};
             _bddContext.UserAccounts.Add(userAccount);
             _bddContext.SaveChanges();
             return userAccount.Id;
         }
 
-        public void ModifierUserAccount(int id, string username, string password, string email)
+        public int CreerAdmin(string username, string password, string email)
+        {
+            return CreerUserAccount(username, password, email, TypeRole.Admin);      
+        }
+
+
+        public void ModifierUserAccount(int id, string username, string password, string email, TypeRole role)
         {
             UserAccount userAccount = _bddContext.UserAccounts.Find(id);
 
@@ -64,6 +71,7 @@ namespace Kili.Models
                 userAccount.UserName = username;
                 userAccount.Password = password;
                 userAccount.Mail = email;
+                userAccount.Role = role;
                 _bddContext.SaveChanges();
             }
         }
