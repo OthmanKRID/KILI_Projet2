@@ -10,7 +10,7 @@ namespace Kili.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=localhost;user id=root;password=rrrrr;database=Kili");
+            optionsBuilder.UseMySql("server=localhost;user id=root;password=P@ssw0rd5;database=Kili");
         }
 
         public void InitializeDb()
@@ -26,6 +26,8 @@ namespace Kili.Models
 
 
             userAccountServices.DésactiverUserAccount(1);
+
+            this.SaveChanges();
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

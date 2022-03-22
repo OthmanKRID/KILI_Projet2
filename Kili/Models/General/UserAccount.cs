@@ -24,7 +24,7 @@ namespace Kili.Models.General
         public int? PersonneID { get; set; }
         public virtual Personne Personne { get; set; }
 
-        public TypeRole Role { get; set; }
+        public TypeRole Role { get; set; } = TypeRole.Utilisateur;
 
     }
 

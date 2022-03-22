@@ -1,4 +1,5 @@
 ﻿using Kili.Models.General;
+using Kili.Models.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using static Kili.Models.General.UserAccount;
 
 namespace Kili.Models
 {
-    public class UserAccount_Services
+    public class UserAccount_Services : IUserAccount_Services
     {
         private BddContext _bddContext;
         public UserAccount_Services()
