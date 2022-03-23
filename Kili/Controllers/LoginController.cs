@@ -65,5 +65,7 @@ namespace Kili.Controllers
             HttpContext.SignOutAsync();
             return Redirect("/");
         }
+
+
     }
 }

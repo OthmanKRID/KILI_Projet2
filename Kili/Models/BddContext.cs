@@ -23,9 +23,7 @@ namespace Kili.Models
             userAccountServices.CreerUserAccount("Fara", "P@ssFara1", "Fara@gmail.com", TypeRole.Utilisateur);
             userAccountServices.CreerUserAccount("Romy", "P@ssRomy1", "Romy@gmail.com", TypeRole.Utilisateur);
             userAccountServices.CreerUserAccount("Othman", "P@ssOthman1", "Othman@gmail.com", TypeRole.Utilisateur);
-
-
-            userAccountServices.DésactiverUserAccount(1);
+            userAccountServices.DesactiverUserAccount(1);
 
             this.SaveChanges();
 

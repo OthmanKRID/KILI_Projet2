@@ -88,7 +88,7 @@ namespace Kili.Models
             }
         }
 
-        public void DésactiverUserAccount(int id)
+        public void DesactiverUserAccount(int id)
         {
             UserAccount userAccount = _bddContext.UserAccounts.Find(id);
 
