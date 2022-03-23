@@ -1,4 +1,5 @@
-﻿using Kili.Models.General;
+﻿using Kili.Models.Dons;
+using Kili.Models.General;
 using Microsoft.EntityFrameworkCore;
 
 namespace Kili.Models
@@ -7,6 +8,9 @@ namespace Kili.Models
     {
         public DbSet<UserAccount> UserAccounts { get; set; }
         public DbSet<Association> Associations { get; set; }
+        public DbSet<Donateur> Donateurs { get; set; }
+        public DbSet<Don> Dons { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

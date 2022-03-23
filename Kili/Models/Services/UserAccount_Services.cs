@@ -9,7 +9,7 @@ using static Kili.Models.General.UserAccount;
 
 namespace Kili.Models
 {
-    public class UserAccount_Services : IUserAccount_Services
+    public class UserAccount_Services 
     {
         private BddContext _bddContext;
         public UserAccount_Services()
@@ -51,7 +51,8 @@ namespace Kili.Models
         //Fonction permettant de créer un UserAccount
         public int CreerUserAccount(string username, string password, string email, TypeRole role)
         {
-            UserAccount userAccount = new UserAccount() { UserName = username, Password = password, Mail = email, DateCreation = System.DateTime.Today, Actif = true, Role = role};
+            string motDePasse = EncodeMD5(password);
+            UserAccount userAccount = new UserAccount() { UserName = username, Password = motDePasse, Mail = email, DateCreation = System.DateTime.Today, Actif = true, Role = role};
             _bddContext.UserAccounts.Add(userAccount);
             _bddContext.SaveChanges();
             return userAccount.Id;
@@ -66,11 +67,11 @@ namespace Kili.Models
         public void ModifierUserAccount(int id, string username, string password, string email, TypeRole role)
         {
             UserAccount userAccount = _bddContext.UserAccounts.Find(id);
-
+            string motDePasse = EncodeMD5(password);
             if (userAccount != null)
             {
                 userAccount.UserName = username;
-                userAccount.Password = password;
+                userAccount.Password = motDePasse;
                 userAccount.Mail = email;
                 userAccount.Role = role;
                 _bddContext.SaveChanges();

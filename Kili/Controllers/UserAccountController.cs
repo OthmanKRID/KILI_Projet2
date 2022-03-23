@@ -20,8 +20,8 @@ namespace Kili.Controllers
         [HttpPost]
         public IActionResult CreerUserAccount(UserAccountViewModel viewModel)
         {
-            if (!ModelState.IsValid)
-                return View();
+            if (!ModelState.IsValid) { 
+                
 
             UserAccount_Services userAccount_Services = new UserAccount_Services();
             {
@@ -41,7 +41,9 @@ namespace Kili.Controllers
                 HttpContext.SignInAsync(userPrincipal);
                 
                 return Redirect("/home/index");
+                }              
             }
+          return View();
         }
         
         public IActionResult ModifierUserAccount(int id)

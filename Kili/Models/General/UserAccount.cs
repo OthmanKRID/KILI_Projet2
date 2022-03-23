@@ -10,7 +10,7 @@ namespace Kili.Models.General
         [MaxLength(25)]
         public string UserName { get; set; }
 
-        [MaxLength(20)]
+        [MaxLength(60)]
         //[RegularExpression(@"^(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,}$", ErrorMessage = "Votre mot de passe doit avoir au moins 8 caractères dont une lettre en majuscule, un nombre et un caractère spécial")]
         public string Password { get; set; }
 
