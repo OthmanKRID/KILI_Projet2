@@ -7,6 +7,7 @@ namespace Kili.Models
     {
         public DbSet<UserAccount> UserAccounts { get; set; }
         public DbSet<Association> Associations { get; set; }
+        public DbSet<Adresse> Adresses { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -18,6 +19,9 @@ namespace Kili.Models
             this.Database.EnsureDeleted();
             this.Database.EnsureCreated();
             UserAccount_Services userAccountServices = new UserAccount_Services();
+            Association_Services associationServices = new Association_Services();
+
+            //associationServices.CreerAssociation("Première Asso", new Adresse() { Numero = 1, Voie="rue du sport", CodePostal=34000, Ville="Montpellier" }, "Sport", new UserAccount() {UserName="username première asso", Password="aaa",Mail="1ere@mail.com" }); 
 
             userAccountServices.CreerAdmin("Admin", "Admin", "Kili@mail.com");
             userAccountServices.CreerUserAccount("Fara", "P@ssFara1", "Fara@gmail.com", TypeRole.Utilisateur);

@@ -21,7 +21,7 @@ namespace Kili.Controllers
         public IActionResult Authentification()
         {
 
-                UserAccountViewModel viewModel = new UserAccountViewModel { Authentifie = HttpContext.User.Identity.IsAuthenticated };
+                UserAccountViewModel viewModel = new UserAccountViewModel { Authentifie = HttpContext.User.Identity.IsAuthenticated, UserAccount = new UserAccount() };
                 if (viewModel.Authentifie)
                 {
                     viewModel.UserAccount = UserAccount_Services.ObtenirUserAccount(HttpContext.User.Identity.Name);
@@ -33,8 +33,8 @@ namespace Kili.Controllers
         [HttpPost]
         public IActionResult Authentification(UserAccountViewModel viewModel, string returnUrl)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            // {
                 UserAccount utilisateur = UserAccount_Services.Authentifier(viewModel.UserAccount.UserName, viewModel.UserAccount.Password);
                 if (utilisateur != null)
                 {
@@ -55,9 +55,10 @@ namespace Kili.Controllers
 
                     return Redirect("/");
                 }
-               ModelState.AddModelError("UserAccount.UserName", "UserName et/ou mot de passe incorrect(s)");
-            }
-            return View(viewModel);
+               //ModelState.AddModelError("UserAccount.UserName", "UserName et/ou mot de passe incorrect(s)");
+           // }
+            //return View(viewModel);
+            return View("../Home/Index");
         }
 
         public ActionResult Deconnexion()

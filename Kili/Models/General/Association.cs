@@ -1,4 +1,5 @@
 ﻿using Kili.Models.General;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Kili.Models.General
@@ -10,10 +11,26 @@ namespace Kili.Models.General
         [MaxLength(40)]
         public string Nom { get; set; }
         [Required]
-        public Adresse Adresse { get; set; }
+        public int? AdresseId { get; set; }
+        public virtual Adresse Adresse { get; set; }
         [Required]
-        public string Theme { get; set; }
+        public ThemeAssociation Theme { get; set; }
+
+        public bool Actif { get; set; }
         public int? UserAccountId { get; set; }
         public virtual UserAccount UserAccount { get; set; }
+    }
+
+    public enum ThemeAssociation
+    {
+        Sport,
+        [DefaultValue("Arts et culture")]
+        Arts_et_culture,
+        Environnement,
+        [DefaultValue(" Humanitaire-caritative")]
+        Humanitaire_caritative,
+        [DefaultValue("Club deloisirs")]
+        club_de_loisirs,
+        étudiante
     }
 }

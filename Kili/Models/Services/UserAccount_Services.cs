@@ -50,7 +50,8 @@ namespace Kili.Models
         //Fonction permettant de créer un UserAccount
         public int CreerUserAccount(string username, string password, string email, TypeRole role)
         {
-            UserAccount userAccount = new UserAccount() { UserName = username, Password = password, Mail = email, DateCreation = System.DateTime.Today, Actif = true, Role = role};
+            string motDePasse = EncodeMD5(password);
+            UserAccount userAccount = new UserAccount() { UserName = username, Password = motDePasse, Mail = email, DateCreation = System.DateTime.Today, Actif = true, Role = role};
             _bddContext.UserAccounts.Add(userAccount);
             _bddContext.SaveChanges();
             return userAccount.Id;
@@ -101,7 +102,7 @@ namespace Kili.Models
         public UserAccount Authentifier(string username, string password)
         {
             string motDePasse = EncodeMD5(password);
-            UserAccount user = this._bddContext.UserAccounts.FirstOrDefault(u => u.UserName == username && u.Password == password);
+            UserAccount user = this._bddContext.UserAccounts.FirstOrDefault(u => u.UserName == username && u.Password == motDePasse);
             return user;
         }
 
