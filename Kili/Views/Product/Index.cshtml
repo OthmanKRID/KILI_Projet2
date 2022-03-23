@@ -1,5 +1,5 @@
 ﻿@model List<Kili.Models.Vente.Produit>
-{
+@{
     Layout = null;
 }
 <h1> Vos produits </h1>
@@ -29,5 +29,6 @@
 
 <ul>
     <li>@Html.ActionLink("Créer vos produits", "CreerProduit", "Product")</li>
-    <li>@Html.ActionLink("Modifier vos produits", "ModifierProduit", "Product")</li>
+    <li>@Html.ActionLink("Modifier vos produits", "ModifierProduit", "Product")</li><br />
+    <li>@Html.ActionLink("Revenir à l'accueil", "Index", "Home")</li>
 </ul>

@@ -259,3 +259,4 @@ C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Razor\Views\Cata\C
 C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Razor\Views\Cata\ModifierCatalogue.cshtml.g.cs
 C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Razor\Views\Product\CreerProduit.cshtml.g.cs
 C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
+C:\Users\tolot\source\KILI_REPOS\Kili\obj\Debug\netcoreapp3.1\Razor\Views\Cata\NotFound.cshtml.g.cs

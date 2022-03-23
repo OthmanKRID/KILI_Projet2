@@ -26,11 +26,11 @@ namespace Kili.Controllers.Vente_Controllers
             return View();
         }
 
-        public IActionResult ModifierCatalogue(int catalogueid)
+        /*public IActionResult ModifierCatalogue(int catalogueid)
         {
             if (catalogueid != 0)
             {
-
+                
                 Catalogue_Services catalogueService = new Catalogue_Services();
                 {
                     Catalogue catalogue = catalogueService.ObtenirAllCatalogues().Where(c => c.CatalogueID == catalogueid).FirstOrDefault();
@@ -42,13 +42,24 @@ namespace Kili.Controllers.Vente_Controllers
                 }
             }
             return View("Error");
-        }
-
-        /*public IActionResult ModifierCatalogue(int catalogueid)
+        }*/
+        public IActionResult ModifierCatalogue(int catalogueid)
         {
             if (catalogueid != 0)
+            {
+                //using (IDalVente idalcat = new Catalogue_Services())
+                
+                    Catalogue catalogues = _Catalogue_Services.ObtenirAllCatalogues().Where(c => c.CatalogueID == catalogueid).FirstOrDefault();
+                    if (catalogues == null)
+                    {
+                        return NotFound();
+                    }
+                    return View(catalogues);
+                
+            }
+            return NotFound();
+        }
 
-        }*/
 
         [HttpPost]
         public IActionResult CreerCatalogue(Catalogue catalogue)
@@ -59,6 +70,25 @@ namespace Kili.Controllers.Vente_Controllers
             {
                 catalogueService.CreerCatalogue(catalogue.CatalogueName, catalogue.Description);
                 return RedirectToAction("Index");
+            }
+        }
+
+        public IActionResult ModifierCatalogue(Catalogue catalogue)
+        {
+            if (!ModelState.IsValid)
+                return View(catalogue);
+
+            if (catalogue.CatalogueID != 0)
+            {
+                using (IDalVente idalcat = new Catalogue_Services())
+                {
+                    idalcat.ModifierCatalogue(catalogue);
+                    return RedirectToAction("Index");
+                }
+            }
+            else
+            {
+                return NotFound();
             }
         }
     }

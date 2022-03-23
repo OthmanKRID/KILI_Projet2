@@ -1,14 +1,14 @@
-﻿using Kili.Models.General;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Kili.Models.Vente;
+using static Kili.Models.Vente.Catalogue;
 
 namespace Kili.Models.Services.Vente_Services
 {
-    public class Catalogue_Services
+    public class Catalogue_Services : IDalVente
     {
         private BddContext _bddContext;
         public Catalogue_Services()
@@ -76,6 +76,41 @@ namespace Kili.Models.Services.Vente_Services
         public void Dispose()
         {
             _bddContext.Dispose();
+        }
+
+        public void DeleteCreateDatabase()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Catalogue> ObtientAllCatalogues()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ModifierCatalogue(Catalogue catalogue)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Produit> ObtientAllProduits()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int CreerProduit(string designation, string format, string description, string imagePath, double prixUnitaire, string devise, int catalogueid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ModifierProduit(Produit produit)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SupprimerProduit(int produitid)
+        {
+            throw new NotImplementedException();
         }
     }
 }
