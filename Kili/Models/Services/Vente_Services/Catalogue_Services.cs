@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using Kili.Models.Vente;
-using static Kili.Models.Vente.Catalogue;
+
 
 namespace Kili.Models.Services.Vente_Services
 {

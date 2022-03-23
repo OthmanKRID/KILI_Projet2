@@ -13,6 +13,7 @@ namespace Kili.Models
 
         public DbSet<Produit> Produits { get; set; }
         public DbSet<Catalogue> Catalogues { get; set; }
+        //public DbSet<Panier> Paniers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -78,7 +79,22 @@ namespace Kili.Models
                CatalogueID = 02,
            }
             );
-            this.SaveChanges();
+
+            /*this.Produits.AddRange(
+          new Panier
+          {
+              ProduitID = 001,
+              Designation = "Pili Pili",
+              Format = "100g",
+              Description = "Piment rouge en provenance de Madagascar, pour donner goût à vos plats.",
+              PrixUnitaire = 5,
+              Devise = "EUR",
+              ImagePath = "pilipili.jpg",
+              CatalogueID = 01,
+          }
+          );*/
+
+           this.SaveChanges();
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
